@@ -15,3 +15,4 @@ var profileSchema = new SimpleSchema({
     type: Date
   }
 });
+Profiles.attachSchema(profileSchema);
