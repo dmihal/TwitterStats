@@ -3,7 +3,7 @@ ProfilePage = React.createClass({
   getMeteorData() {
     return {
       ready: FlowRouter.subsReady("profile"),
-      profile: Profiles.findOne({screen_name: this.props.screenname})
+      profile: Profiles.findOne({screenname: this.props.screenname})
     };
   },
   render: function(){

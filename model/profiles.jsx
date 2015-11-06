@@ -6,7 +6,7 @@ var profileSchema = new SimpleSchema({
     label: "User ID from Twitter",
     min: 0
   },
-  screen_name: {
+  screenname: {
     type: String,
     label: "The twitter @handle",
     regEx: /^[A-Za-z0-9_]{1,15}$/

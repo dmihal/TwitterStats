@@ -9,11 +9,18 @@ TwitterHandler = {
     result = TwitterSource.getCurrentFollowers(item.screenname);
     if (result.success){
       var screenname = result.profile.screenname.toLowerCase();
-      Profiles.update({screen_name: screenname}, {
-        twitter_id: result.profile.id,
-        screen_name: screenname,
-        last_updated: new Date()
+      Profiles.update({screenname: screenname}, {
+        $set: {
+          twitter_id: result.profile.id,
+          screenname: screenname,
+          last_updated: new Date()
+        }
       }, {upsert: true});
+      DataPoints.insert({
+        screenname: screenname,
+        followers: result.profile.followers,
+        date: new Date()
+      })
       console.log(screenname, 'current followers:', result.profile.followers);
     }
   }
