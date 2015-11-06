@@ -8,7 +8,6 @@ autopublish
 insecure
 aldeed:collection2
 dburles:collection-helpers
-iron:router
 momentjs:moment
 react
 standard-minifiers
@@ -25,3 +24,5 @@ random
 ejson
 spacebars
 check
+kadira:flow-router
+kadira:react-layout
