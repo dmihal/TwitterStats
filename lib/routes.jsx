@@ -8,7 +8,7 @@ FlowRouter.route('/', {
 FlowRouter.route('/@:screenname', {
   action: function(params) {
     ReactLayout.render(MainLayout, {
-      content: <ProfilePage screenname={params.screenname} />
+      content: <ProfilePage screenname={params.screenname.toLowerCase()} />
     });
   },
   subscriptions: function(params) {
