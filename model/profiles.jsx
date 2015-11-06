@@ -1,4 +1,9 @@
 Profiles = new Mongo.Collection('profiles');
+Profiles.helpers({
+  getDataPoints(){
+    return DataPoints.find({screenname: this.screenname}, {sort: {date: 1}});
+  }
+});
 
 var profileSchema = new SimpleSchema({
   twitter_id: {
