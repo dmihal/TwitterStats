@@ -5,12 +5,15 @@ FlowRouter.route('/', {
     });
   }
 });
-FlowRouter.route('/@:username', {
+FlowRouter.route('/@:screenname', {
   action: function(params) {
     ReactLayout.render(MainLayout, {
-      content: <UserPage />
+      content: <ProfilePage screenname={params.screenname} />
     });
-  }
+  },
+  subscriptions: function(params) {
+    this.register('profile', Meteor.subscribe('profile', params.screenname));
+  },
 });
 FlowRouter.notFound = {
   action: function() {

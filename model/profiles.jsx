@@ -1,6 +1,6 @@
-Users = new Mongo.Collection('users');
+Profiles = new Mongo.Collection('profiles');
 
-var userSchema = new SimpleSchema({
+var profileSchema = new SimpleSchema({
   twitter_id: {
     type: Number,
     label: "User ID from Twitter",
